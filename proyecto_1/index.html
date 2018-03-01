@@ -1,12 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mi sitio personal</title>
-</head>
-<body>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mi sitio personal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main>
+    <!-- Navigation -->
+    <nav id="mainNav" class="fixed-top">
+      <div class="container">
+        <a href="/" class="nav-brand">Title project</a>
+        <div id="navbarResponsive">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#portfolio" class="nav-link">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <img src="" alt="">
+        <h1>Title project</h1>
+        <h2>Skills</h2>
+      </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <div class="row">
+          <div>
+            <a href="/">
+              <img src="" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <div class="row">
+          <div>
+            <p class="lead">
+              Text
+            </p>
+          </div>
+          <div>
+            <p class="lead">
+              Text
+            </p>
+          </div>
+        </div>
+        <div class="text-center">
+          <a href="#">
+            Download CV!
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form name="sentMessage" id="contactForm">
+          <div>
+            <label for="name">Name</label>
+            <input class="form-control" id="name" type="text" placeholder="Please enter your name" required>
+          </div>
+          <div>
+            <label for="name">Email</label>
+            <input class="form-control" id="email" type="email" placeholder="Please enter your email" required>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Please enter a message." required></textarea>
+          </div>
+          <div>
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div>
+            <h4>TITLE</h4>
+            <p>
+              MESSAGE
+              <br>OTHER MESSAGE
+            </p>
+          </div>
+          <div>
+            <h4>TITLE</h4>
+            <ul>
+              <li>a</li>
+              <li>b</li>
+              <li>c</li>
+            </ul>
+          </div>
+          <div>
+            <h4>TITLE</h4>
+            <p>
+              MESSAGE
+              <br>OTHER MESSAGE
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
 </body>
+
 </html>
