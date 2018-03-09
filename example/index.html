@@ -31,7 +31,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm">
-        <form name="form">
+        <form name="form" onsubmit="saveUser(event);">
           <div class="form-group">
             <label for="name">Nombre</label>
             <input type="text" class="form-control" id="name" placeholder="Tu fabuloso nombre" required>
@@ -45,7 +45,18 @@
             <label for="age">Edad</label>
             <input type="number" class="form-control" id="age" placeholder="Escribe tu edad" required>
           </div>
-          <button type="submit" class="btn btn-primary" onclick="saveUser(event);">Guardar</button>
+          <div class="form-group">
+            <label for="age">Licor Favorito</label>
+            <select class="form-control" id="licor">
+              <option>Aguardiente</option>
+              <option>Cerveza</option>
+              <option>Ginnebra</option>
+              <option>Jaggermaister</option>
+              <option>Tequila</option>
+              <option>Vodka</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
       </div>
       <div class="col-sm">
@@ -59,7 +70,7 @@
             </tr>
           </thead>
           <tbody id="usersList">
-              
+            
           </tbody>
         </table>
       </div>

@@ -13,6 +13,9 @@ function saveUser(evt) {
   const email = $inputEmail.value
   const age = $inputAge.value
 
+  // Nuevo
+  const $node = document.createElement('tr');
+
   const row = `
   <tr>
     <td>1</td>
@@ -21,5 +24,7 @@ function saveUser(evt) {
     <td>${age}</td>
   </tr>
   `
-  $userList.innerHTML = row
+  // Nuevo
+  $node.innerHTML = row;
+  $userList.appendChild($node)
 }
