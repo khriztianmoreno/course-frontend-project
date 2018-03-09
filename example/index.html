@@ -47,14 +47,14 @@
           </div>
           <div class="form-group">
             <label for="age">Bebida Favorito</label>
-            <select class="form-control" id="licor">
-              <option>Agua</option>
-              <option>Aguardiente</option>
-              <option>Cerveza</option>
-              <option>Ginnebra</option>
-              <option>Jaggermaister</option>
-              <option>Tequila</option>
-              <option>Vodka</option>
+            <select class="form-control" id="drink" onchange="validateAge()">
+              <option value="Agua">Agua</option>
+              <option value="Aguardiente">Aguardiente</option>
+              <option value="Cerveza">Cerveza</option>
+              <option value="Ginnebra">Ginnebra</option>
+              <option value="Jaggermaister">Jaggermaister</option>
+              <option value="Tequila">Tequila</option>
+              <option value="Vodka">Vodka</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary">Guardar</button>
