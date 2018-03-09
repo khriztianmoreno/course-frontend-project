@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mi sitio personal</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,20 +16,24 @@
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
               Dropdown
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -52,110 +57,42 @@
     <!-- Header -->
     <header class="bg-primary text-white text-center">
       <div class="container">
-        <img class="img-fluid rounded-circle" src="http://via.placeholder.com/350x350" alt="">
+        <img class="img-fluid rounded-circle hero" src="https://pbs.twimg.com/profile_images/869999018843267073/DftJ2I0x_200x200.jpg"
+          alt="">
         <h1 class="text-uppercase">Cristian Moreno</h1>
-        <hr>
-        <h2 class="font-weight-light">Web Developer - Geek</h2>
+        <h2 class="font-weight-light hero">Web Developer - Geek</h2>
       </div>
     </header>
 
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-        <div class="row">
-          <div class="portfolio-item  col-md-6 col-lg-4">
-            <a href="">
-              <img class="img-fluid" src="http://via.placeholder.com/200x200" alt="">
-            </a>
-          </div>
-          <div class="portfolio-item col-md-6 col-lg-4">
-            <a href="">
-              <img class="img-fluid" src="http://via.placeholder.com/200x200" alt="">
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-      <div class="container">
-        <h2>About</h2>
-        <div class="row">
-          <div>
-            <p class="lead">
-              Text
-            </p>
-          </div>
-          <div>
-            <p class="lead">
-              Text
-            </p>
-          </div>
-        </div>
-        <div class="text-center">
-          <a href="#">
-            Download CV!
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-        <h2>Contact Me</h2>
-        <form name="sentMessage" id="contactForm">
-          <div>
-            <label for="name">Name</label>
-            <input class="form-control" id="name" type="text" placeholder="Please enter your name" required>
-          </div>
-          <div>
-            <label for="name">Email</label>
-            <input class="form-control" id="email" type="email" placeholder="Please enter your email" required>
-          </div>
-          <div>
-            <label for="message">Message</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Please enter a message." required></textarea>
-          </div>
-          <div>
-            <button type="submit">Send</button>
-          </div>
-        </form>
-      </div>
-    </section>
+   
 
     <!-- Footer -->
     <footer class="footer text-center">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div>
-            <h4>TITLE</h4>
-            <p>
-              MESSAGE
-              <br>OTHER MESSAGE
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">
+              Medellin, Colombia
+              <br>Nodo Coworking
             </p>
           </div>
-          <div>
-            <h4>TITLE</h4>
-            <ul>
-              <li>a</li>
-              <li>b</li>
-              <li>c</li>
-            </ul>
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Around the Web</h4>
+
           </div>
-          <div>
-            <h4>TITLE</h4>
-            <p>
-              MESSAGE
-              <br>OTHER MESSAGE
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">About Freelancer</h4>
+            <p class="lead mb-0">
+              Lorem, ipsum dolor sit amet consectetur
             </p>
           </div>
         </div>
       </div>
     </footer>
   </main>
+
+  <script src="./app.js"></script>
 </body>
 
 </html>

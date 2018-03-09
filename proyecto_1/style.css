@@ -7,6 +7,9 @@ h6 {
   font-weight: 700;
 }
 
+.hero {
+  padding: 50px 0;
+}
 
 section {
   padding: 40px 0;
@@ -14,4 +17,20 @@ section {
 
 .portfolio-item {
   margin-bottom: 15px;
+}
+
+main > header.bg-custom {
+  background-color: white;
+}
+
+li:nth-last-child(-n+4) {
+  color:red;
+}
+
+
+
+
+.bg-primary {
+  color: green;
+  background-color: red ;
 }
