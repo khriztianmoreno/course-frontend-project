@@ -28,6 +28,9 @@ function saveUser(evt) {
   const email = $inputEmail.value
   const age = $inputAge.value
   const drink = $inputDrink.value
+  debugger
+
+  console.log(localStorage.getItem('currentPosition'))
 
   // NUEVO
   const id = Math.floor(Math.random() * 3333333)

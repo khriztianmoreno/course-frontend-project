@@ -32,7 +32,7 @@
   </header>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm">
+      <div class="col-sm-12 col-xl-6">
         <form name="form" onsubmit="saveUser(event);">
           <div class="form-group">
             <label for="name">Nombre</label>
@@ -71,14 +71,10 @@
     </div>
   </div>
   <script>
-    // Preguntar por mi ubicacion
-
-    function currentLocation (position) {
-      console.log('position', position.coords.latitude, position.coords.longitude)
-    }
-
     function drawCurrentLocation (position) {
       const poblado = {lat: position.coords.latitude, lng: position.coords.longitude};
+      // Guardar la ubicacion
+      localStorage.setItem('currentPosition', JSON.stringify(poblado))
       const $map = document.getElementById('map')
 
       const geocoder = new google.maps.Geocoder
@@ -89,7 +85,7 @@
 
       geocoder.geocode({'location': poblado}, (results, status) => {
         if (status === 'OK') {
-          const address = results[0].formatted_address
+          const address = results[0].formatted_address.split(',')[0]
           const infowindow = new google.maps.InfoWindow({
             content: `Nodo Coworking - ${address}`,
           });
@@ -100,6 +96,11 @@
             map: map
           });
 
+          const marker2 = new google.maps.Marker({
+            position: {lat: 6.2062518, lng:-75.5786388},
+            map: map
+          });
+
           infowindow.open(map,marker)
         }
         
@@ -107,16 +108,24 @@
 
     }
 
-    // Pregunto si el navegador soporta GPS
-    /*if (navigator.geolocation) {
-      // Pido al navegador la pos actual
-      navigator.geolocation.getCurrentPosition(currentLocation)
-      console.log('Ya pedi la ubicacion')
-    }*/
-
     function initMap () {
-      // Es demoradad, necesitamos esperar
-      navigator.geolocation.getCurrentPosition(drawCurrentLocation)
+      // Preguntar por mi ubicacion
+
+      // Es lento, necesitamos esperar
+      const currentPosition = localStorage.getItem('currentPosition')
+      if (currentPosition) {
+        const myCurrentPosition = JSON.parse(currentPosition)
+        const position = {
+          coords: {
+            latitude: myCurrentPosition.lat,
+            longitude: myCurrentPosition.lng
+          }
+        }
+        drawCurrentLocation(position)
+      } else {
+        navigator.geolocation.getCurrentPosition(drawCurrentLocation)
+      }
+      
     }
   </script>
   <script async defer

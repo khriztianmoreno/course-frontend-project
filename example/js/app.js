@@ -33,12 +33,13 @@ function saveUser(evt) {
   const email = $emailInput.value;
   const age = $ageInput.value;
 
-
+  const location = JSON.parse(localStorage.getItem('currentPosition'))
   const id = generateUUID();
-  database.ref(`carritos/${id}`).set({
+  database.ref(`users/${id}`).set({
     name,
     email,
-    age
+    age,
+    location
   });
 }
 
