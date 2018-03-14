@@ -2,16 +2,18 @@
 <html>
 
 <head>
-  <title>FrontEnd Course || @khriztianmoreno</title>
+  <title>Code Rise || @khriztianmoreno</title>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
     crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/app.css">
 </head>
 
 <body>
   <header class="page-header">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-md-12">
           <ul class="breadcrumb">
@@ -23,7 +25,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h2>FrontEnd Course Demo</h2>
+          <h2>Code Rise Demo</h2>
         </div>
       </div>
     </div>
@@ -46,16 +48,7 @@
             <input type="number" class="form-control" id="age" placeholder="Escribe tu edad" required>
           </div>
           <div class="form-group">
-            <label for="age">Bebida Favorito</label>
-            <select class="form-control" id="drink" onchange="validateAge()">
-              <option value="Agua">Agua</option>
-              <option value="Aguardiente">Aguardiente</option>
-              <option value="Cerveza">Cerveza</option>
-              <option value="Ginnebra">Ginnebra</option>
-              <option value="Jaggermaister">Jaggermaister</option>
-              <option value="Tequila">Tequila</option>
-              <option value="Vodka">Vodka</option>
-            </select>
+            <div id="map"></div>
           </div>
           <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
@@ -77,9 +70,60 @@
       </div>
     </div>
   </div>
-  
-  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-  <script src="./app.js"></script>
+  <script>
+    // Preguntar por mi ubicacion
+
+    function currentLocation (position) {
+      console.log('position', position.coords.latitude, position.coords.longitude)
+    }
+
+    function drawCurrentLocation (position) {
+      const poblado = {lat: position.coords.latitude, lng: position.coords.longitude};
+      const $map = document.getElementById('map')
+
+      const geocoder = new google.maps.Geocoder
+      const map = new google.maps.Map($map, {
+        zoom: 14,
+        center: poblado
+      });
+
+      geocoder.geocode({'location': poblado}, (results, status) => {
+        if (status === 'OK') {
+          const address = results[0].formatted_address
+          const infowindow = new google.maps.InfoWindow({
+            content: `Nodo Coworking - ${address}`,
+          });
+
+          const marker = new google.maps.Marker({
+            position: poblado,
+            icon: 'https://maps.google.com/mapfiles/kml/shapes/library_maps.png',
+            map: map
+          });
+
+          infowindow.open(map,marker)
+        }
+        
+      })
+
+    }
+
+    // Pregunto si el navegador soporta GPS
+    /*if (navigator.geolocation) {
+      // Pido al navegador la pos actual
+      navigator.geolocation.getCurrentPosition(currentLocation)
+      console.log('Ya pedi la ubicacion')
+    }*/
+
+    function initMap () {
+      // Es demoradad, necesitamos esperar
+      navigator.geolocation.getCurrentPosition(drawCurrentLocation)
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChV8GkHWhQzf1d2tUJtaUweI6Z3oX4XIw&callback=initMap">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 
 </html>
