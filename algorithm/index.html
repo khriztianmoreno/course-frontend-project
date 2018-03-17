@@ -14,7 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <form onsubmit="registerSale">
+        <form onsubmit="registerSale(event)">
           <div class="form-group">
             <label for="employee">Empleado</label>
             <select name="employee" id="employee" class="form-control">
@@ -25,10 +25,11 @@
           </div>
           <div class="form-group">
             <label for="product">Valor Product</label>
-            <input type="number" name="product" id="product" class="form-control" />
+            <input type="number" name="product" id="product" class="form-control" required/>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Registrar</button>
+            <a href="#" onclick="closeDay()" class="btn btn-secondary"> Cerrar venta</a>
           </div>
         </form>
       </div>
@@ -46,8 +47,8 @@
     <script src="./8.js"></script>
     <script src="./9.js"></script>
     <script src="./10.js"></script>
-    <script src="./11.js"></script>
-  <script src="./app.js"></script>-->
+    <script src="./11.js"></script>-->
+  <script src="./app.js"></script>
 </body>
 
 </html>
