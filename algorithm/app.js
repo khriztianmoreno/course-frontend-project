@@ -18,25 +18,45 @@ const COMMISSSION_PLUS = 0.02
 const COMMISSSION_GOLD = 0.07
 const RTF = 0.125
 
-const productVal = prompt('El valor del product:')
-
-let valComPlus
-let valComGold
-debugger
-// Calcular el valor de la comision general
-const valComBase = productVal * COMMISSSION_BASE
-if (productVal > 100000) {
-  // Calcular el valor de la comision PLUS
-  valComPlus = productVal * COMMISSSION_PLUS
-}
-
-// TODO: Se cerro el dia
-if (productVal >= 350000) {
-  // Calcular el valor de la comision PLUS
-  valComGold = productVal * COMMISSSION_GOLD
-}
-
 const valRTF = SALARY * RTF
-// Mostrar el valor de ganacia del empleado
 
-const total = (SALARY + valComBase + valComPlus + valComGold) - valRTF
+function calcCommisionBase(productVal) {
+  let valComPlus
+  let valComGold = 0
+  // Calcular el valor de la comision general
+  const valComBase = productVal * COMMISSSION_BASE
+  if (productVal > 100000) {
+    // Calcular el valor de la comision PLUS
+    valComPlus = productVal * COMMISSSION_PLUS
+  }
+
+  const totalCommission = valComBase + valComPlus
+  return totalCommission
+}
+
+function calcularComisionGold(totalVentas) {
+  let valComGold = 0
+  if (totalVentas >= 350000) {
+    // Calcular el valor de la comision PLUS
+    valComGold = totalVentas * COMMISSSION_GOLD
+  }
+
+  return valComGold
+}
+
+const productVal = prompt('El valor del product:')
+const totalEmploye1 = calcCommisionBase(productVal)
+
+const productVal2 = prompt('El valor del product:')
+const totalEmploye2 = calcCommisionBase(productVal2)
+
+// Cerramos dia
+const comGoldEmployee1 = calcularComisionGold(productVal)
+const comGoldEmployee2 = calcularComisionGold(productVal2)
+
+const totalGanacia1 = totalEmploye1 + comGoldEmployee1
+const totalGanacia2 = totalEmploye2 + comGoldEmployee2
+
+
+const totalAPagar1 = (SALARY + totalGanacia1 ) - valRTF
+const totalAPagar2 = (SALARY + totalGanacia2 ) - valRTF
