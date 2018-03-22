@@ -70,3 +70,9 @@ function calculaTotal () {
 console.log(calculaTotal)
 
 
+function acumular(anterior, actual) {
+  debugger
+  return anterior + actual
+}
+
+[1, 2, 4, 5, 6].reduce(acumular)
